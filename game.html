@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors Duel</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>Rock 🪨 Paper 📄 Scissors ✂️</h1>
+
+    <div class="mode-select">
+      <label><input type="radio" name="mode" value="pvc" checked /> User vs Computer</label>
+      <label><input type="radio" name="mode" value="pvp" /> User vs User</label>
+    </div>
+
+    <div class="score-board">
+      <div id="player1-label">Player 1: <span id="player1-score">0</span></div>
+      <div id="player2-label">Computer: <span id="player2-score">0</span></div>
+    </div>
+
+    <div id="choices-area">
+      <!-- PVC mode with images -->
+      <div class="choices pvc">
+        <button class="choice" id="rock">
+          <img src="rock.svg" alt="Rock">
+          <span>Rock</span>
+        </button>
+        <button class="choice" id="paper">
+          <img src="paper.svg" alt="Paper">
+          <span>Paper</span>
+        </button>
+        <button class="choice" id="scissors">
+          <img src="scissors.svg" alt="Scissors">
+          <span>Scissors</span>
+        </button>
+      </div>
+
+      <!-- PVP mode (emojis only for simplicity) -->
+      <div class="choices pvp hidden">
+        <div class="player">
+          <h2>Player 1</h2>
+          <button class="choice p1" data-choice="rock">🪨</button>
+          <button class="choice p1" data-choice="paper">📄</button>
+          <button class="choice p1" data-choice="scissors">✂️</button>
+        </div>
+        <div class="player">
+          <h2>Player 2</h2>
+          <button class="choice p2" data-choice="rock">🪨</button>
+          <button class="choice p2" data-choice="paper">📄</button>
+          <button class="choice p2" data-choice="scissors">✂️</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result" id="result">Choose a mode and make your move!</div>
+    <button id="reset" class="reset hidden">Reset Game</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
